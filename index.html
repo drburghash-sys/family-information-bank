@@ -329,6 +329,114 @@ body.game-mode .diamond-topic{font-size:clamp(10px,2vw,21px)!important;color:#07
 }
 
 
+/* V7.6 — Compact landscape results: keep bottom controls visible */
+@media (orientation:landscape){
+  body.game-mode #resultsScreen.active{
+    width:100vw!important;height:100dvh!important;
+    padding:0!important;overflow:hidden!important;
+  }
+  body.game-mode #resultsScreen .result-screen{
+    width:100%;height:100dvh;min-height:100dvh;
+    display:grid;grid-template-rows:auto minmax(0,1fr) auto;
+    gap:6px;justify-content:stretch;
+    padding:max(5px,env(safe-area-inset-top)) 10px max(6px,env(safe-area-inset-bottom));
+    overflow:hidden;
+  }
+  body.game-mode #resultsScreen .stage-title{
+    margin:0!important;
+    font-size:clamp(20px,2.8vw,32px)!important;
+    line-height:1.05;
+  }
+  body.game-mode #classicResultsArea,
+  body.game-mode #diamondResultsArea{
+    min-height:0;height:100%;
+    overflow:hidden;
+    display:flex;flex-direction:column;
+    justify-content:center;
+  }
+  body.game-mode #diamondResultsArea.hidden{display:none!important}
+  body.game-mode #resultsScreen .current-value-panel{
+    margin:0 0 6px!important;
+    font-size:clamp(17px,2.2vw,27px)!important;
+    line-height:1.15;
+    flex:0 0 auto;
+  }
+  body.game-mode #resultsScreen .results-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    gap:10px!important;
+    min-height:0;
+    align-items:stretch;
+  }
+  body.game-mode #resultsScreen .result-team{
+    min-height:0!important;
+    padding:clamp(8px,1.2vw,14px)!important;
+    border-width:3px!important;
+    border-radius:18px!important;
+    display:flex;flex-direction:column;
+    justify-content:center;
+  }
+  body.game-mode #resultsScreen .result-team strong{
+    font-size:clamp(18px,2.4vw,30px)!important;
+    line-height:1.1;
+  }
+  body.game-mode #resultsScreen .result-team span{
+    font-size:clamp(36px,6vw,68px)!important;
+    margin-top:4px!important;
+    line-height:1;
+  }
+  body.game-mode #resultsScreen .score-adjust{
+    gap:7px!important;
+    margin-top:7px!important;
+  }
+  body.game-mode #resultsScreen .score-adjust button{
+    min-height:42px!important;
+    padding:7px 8px!important;
+    font-size:clamp(14px,1.7vw,21px)!important;
+    border-radius:12px!important;
+  }
+  body.game-mode #resultsScreen .actions{
+    margin:0!important;
+    gap:6px!important;
+    flex-wrap:nowrap;
+    flex:0 0 auto;
+  }
+  body.game-mode #resultsScreen .actions button{
+    min-height:38px!important;
+    padding:7px 9px!important;
+    font-size:clamp(11px,1.35vw,15px)!important;
+    border-radius:10px!important;
+    min-width:0!important;
+  }
+  body.game-mode #resultsScreen .diamond-result-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    gap:9px!important;min-height:0;
+  }
+  body.game-mode #resultsScreen .diamond-result-team{
+    padding:9px!important;border-radius:14px!important;
+  }
+  body.game-mode #resultsScreen .diamond-result-team strong{
+    font-size:clamp(16px,2.1vw,25px)!important;
+    margin-bottom:5px!important;
+  }
+  body.game-mode #resultsScreen .diamond-result-gem{
+    width:min(125px,52%)!important;
+    font-size:clamp(24px,4.5vw,48px)!important;
+  }
+}
+@media (orientation:landscape) and (max-height:520px){
+  body.game-mode #resultsScreen .result-screen{gap:4px;padding-top:3px;padding-bottom:4px}
+  body.game-mode #resultsScreen .stage-title{font-size:clamp(18px,2.4vw,25px)!important}
+  body.game-mode #resultsScreen .current-value-panel{font-size:clamp(15px,1.9vw,22px)!important;margin-bottom:4px!important}
+  body.game-mode #resultsScreen .results-grid{gap:7px!important}
+  body.game-mode #resultsScreen .result-team{padding:7px!important;border-radius:15px!important}
+  body.game-mode #resultsScreen .result-team strong{font-size:clamp(16px,2vw,24px)!important}
+  body.game-mode #resultsScreen .result-team span{font-size:clamp(32px,5vw,54px)!important;margin-top:2px!important}
+  body.game-mode #resultsScreen .score-adjust{margin-top:5px!important;gap:5px!important}
+  body.game-mode #resultsScreen .score-adjust button{min-height:36px!important;padding:5px 6px!important;font-size:clamp(12px,1.45vw,17px)!important}
+  body.game-mode #resultsScreen .actions{gap:4px!important}
+  body.game-mode #resultsScreen .actions button{min-height:32px!important;padding:5px 6px!important;font-size:10px!important}
+}
+
 /* V7.5 — Firebase Live */
 .live-card{border:1px solid #38bdf866;background:linear-gradient(145deg,#0b1730ee,#152b55ee 60%,#24104bee);box-shadow:0 16px 45px #0007, inset 0 1px #ffffff12}
 .live-card h2{color:#a5f3fc;text-shadow:0 0 18px #22d3ee77}
